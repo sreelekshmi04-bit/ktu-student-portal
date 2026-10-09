@@ -1,0 +1,103 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Announcements | KTU Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2>KTU</h2>
+            <p>Student Portal</p>
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <nav>
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="announcements.html" class="active">📢 Announcements</a>
+            <a href="exam.html">📝 Examinations</a>
+            <a href="results.html">📊 Results</a>
+            <a href="index.html#timetable">📅 Timetable</a>
+            <a href="index.html#calendar">🗓️ Academic Calendar</a>
+        </nav>
+    </aside>
+
+    <button class="mobile-menu" onclick="toggleMenu()">☰ Menu</button>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>APJ Abdul Kalam Technological University</h2>
+                <p>Student Academic Portal</p>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <h1>University Announcements</h1>
+            <p>Stay informed about important academic updates and notifications.</p>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2>Latest Notifications</h2>
+                <span class="badge">Updates</span>
+            </div>
+
+            <div class="announcement-list">
+
+                <div class="announcement">
+                    <span class="announcement-icon">📢</span>
+                    <div>
+                        <h3>University Notifications</h3>
+                        <p>Check this section for university-related announcements.</p>
+                        <small>General Information</small>
+                    </div>
+                </div>
+
+                <div class="announcement">
+                    <span class="announcement-icon">📝</span>
+                    <div>
+                        <h3>Examination Notifications</h3>
+                        <p>Visit the examination page to explore sample examination information.</p>
+                        <a href="exam.html">View Examinations →</a>
+                    </div>
+                </div>
+
+                <div class="announcement">
+                    <span class="announcement-icon">📊</span>
+                    <div>
+                        <h3>Results Information</h3>
+                        <p>Open the results page to explore the sample results dashboard.</p>
+                        <a href="results.html">View Results →</a>
+                    </div>
+                </div>
+
+                <div class="announcement">
+                    <span class="announcement-icon">🗓️</span>
+                    <div>
+                        <h3>Academic Calendar</h3>
+                        <p>Explore the academic planning section on the homepage.</p>
+                        <a href="index.html#calendar">View Academic Planning →</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>KTU Student Portal | REFORGE UI Redesign Project</p>
+            <p>Demo content for interface demonstration only. These are not verified official notifications.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

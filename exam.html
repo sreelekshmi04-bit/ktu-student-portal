@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTU | Examinations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">KTU</div>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <nav>
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="exam.html" class="active">📝 Examinations</a>
+            <a href="results.html">📊 Results</a>
+            <a href="#timetable">📅 Timetable</a>
+            <a href="index.html#calendar">🗓 Calendar</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+            <div>
+                <h2>Examination Centre</h2>
+                <p>Examination schedules, notifications and important dates</p>
+            </div>
+            <div class="profile">👤</div>
+        </header>
+
+        <section class="welcome">
+            <h1>Examinations 📝</h1>
+            <p>Find the examination information you need in one place.</p>
+
+            <div class="search-box">
+                <input id="examSearch" type="text"
+                    placeholder="Search examination notifications...">
+                <button onclick="filterExams()">Search</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Find Your Examination</h2>
+
+            <div class="filter-panel">
+                <label>
+                    Programme
+                    <select id="programme">
+                        <option value="all">All programmes</option>
+                        <option value="cse">B.Tech Computer Science</option>
+                        <option value="ece">B.Tech Electronics</option>
+                        <option value="eee">B.Tech Electrical</option>
+                    </select>
+                </label>
+
+                <label>
+                    Semester
+                    <select id="semester">
+                        <option value="all">All semesters</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+                    </select>
+                </label>
+            </div>
+        </section>
+
+        <section class="section" id="timetable">
+            <h2>Examination Information</h2>
+            <p class="section-description">
+                Sample information for demonstrating the redesigned interface.
+            </p>
+
+            <div class="announcement-list" id="examList">
+                <div class="announcement exam-item" data-programme="cse" data-semester="3">
+                    <span class="announcement-icon">📅</span>
+                    <div>
+                        <h3>Semester 3 Examination Timetable</h3>
+                        <p>B.Tech Computer Science · Semester 3</p>
+                        <p>Sample entry — verify dates using official KTU notices.</p>
+                    </div>
+                    <span class="badge">Timetable</span>
+                </div>
+
+                <div class="announcement exam-item" data-programme="all" data-semester="all">
+                    <span class="announcement-icon">📢</span>
+                    <div>
+                        <h3>Examination Notifications</h3>
+                        <p>Check official announcements for examination updates.</p>
+                        <p>Sample entry — no live KTU data connected.</p>
+                    </div>
+                    <span class="badge">Notice</span>
+                </div>
+
+                <div class="announcement exam-item" data-programme="cse" data-semester="2">
+                    <span class="announcement-icon">📋</span>
+                    <div>
+                        <h3>Semester 2 Examination Information</h3>
+                        <p>B.Tech Computer Science · Semester 2</p>
+                        <p>Sample entry — check official schedules for current details.</p>
+                    </div>
+                    <span class="badge">Exam</span>
+                </div>
+            </div>
+
+            <p id="examMessage"></p>
+        </section>
+
+        <footer>
+            <p>KTU Student Portal | Unofficial redesign demonstration</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

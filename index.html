@@ -1,0 +1,178 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTU Student Portal | REFORGE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2>KTU</h2>
+            <p>Student Portal</p>
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <nav>
+            <a href="index.html" class="active">🏠 Dashboard</a>
+            <a href="announcements.html">📢 Announcements</a>
+            <a href="exam.html">📝 Examinations</a>
+            <a href="results.html">📊 Results</a>
+            <a href="exam.html#timetable">📅 Exam Timetable</a>
+            <a href="calendar.html">🗓️ Academic Calendar</a>
+        </nav>
+    </aside>
+
+    <button class="mobile-menu" onclick="toggleMenu()">☰ Menu</button>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>APJ Abdul Kalam Technological University</h2>
+                <p>Student Academic Portal</p>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <h1>Welcome, Student!</h1>
+            <p>Your academic information, examinations, results and calendar in one place.</p>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search announcements, exams, results, calendar..."
+                >
+                <button type="button" onclick="searchSite()">Search</button>
+            </div>
+
+            <p id="searchMessage"></p>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2>Important Announcements</h2>
+                <span class="badge">Updates</span>
+            </div>
+
+            <div class="announcement-list">
+
+                <a href="announcements.html" class="announcement">
+                    <span class="announcement-icon">📢</span>
+                    <div>
+                        <h3>University Announcements</h3>
+                        <p>Open our announcements page to explore university updates.</p>
+                    </div>
+                    <span class="arrow">➜</span>
+                </a>
+
+                <a href="exam.html" class="announcement">
+                    <span class="announcement-icon">📝</span>
+                    <div>
+                        <h3>Examination Updates</h3>
+                        <p>Explore examination information and sample schedules.</p>
+                    </div>
+                    <span class="arrow">➜</span>
+                </a>
+
+                <a href="results.html" class="announcement">
+                    <span class="announcement-icon">📊</span>
+                    <div>
+                        <h3>Results Information</h3>
+                        <p>Open the results dashboard to explore sample results.</p>
+                    </div>
+                    <span class="arrow">➜</span>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2>Quick Access</h2>
+                <span class="badge">Student Services</span>
+            </div>
+
+            <div class="quick-grid">
+
+                <a href="announcements.html" class="quick-card">
+                    <span class="quick-icon">📢</span>
+                    <h3>Announcements</h3>
+                    <p>Explore notifications and important updates.</p>
+                    <span class="card-link">View Announcements →</span>
+                </a>
+
+                <a href="exam.html" class="quick-card">
+                    <span class="quick-icon">📝</span>
+                    <h3>Examinations</h3>
+                    <p>Explore examination information and schedules.</p>
+                    <span class="card-link">View Examinations →</span>
+                </a>
+
+                <a href="results.html" class="quick-card">
+                    <span class="quick-icon">📊</span>
+                    <h3>Results</h3>
+                    <p>View the sample results dashboard.</p>
+                    <span class="card-link">View Results →</span>
+                </a>
+
+                <a href="exam.html#timetable" class="quick-card">
+                    <span class="quick-icon">📅</span>
+                    <h3>Exam Timetable</h3>
+                    <p>Go to the examination timetable section.</p>
+                    <span class="card-link">View Timetable →</span>
+                </a>
+
+                <a href="calendar.html" class="quick-card">
+                    <span class="quick-icon">🗓️</span>
+                    <h3>Academic Calendar</h3>
+                    <p>Open our dedicated academic calendar page.</p>
+                    <span class="card-link">Explore Calendar →</span>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2>Academic Planning</h2>
+            </div>
+
+            <a href="calendar.html" class="announcement">
+                <span class="announcement-icon">🗓️</span>
+                <div>
+                    <h3>Academic Calendar</h3>
+                    <p>View the calendar page for academic dates and events.</p>
+                </div>
+                <span class="arrow">➜</span>
+            </a>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2>Explore Your Student Portal</h2>
+            </div>
+
+            <p>
+                Navigate between announcements, examinations, results and
+                academic planning using the menu or quick-access cards.
+            </p>
+        </section>
+
+        <footer>
+            <p>KTU Student Portal | REFORGE UI Redesign Project</p>
+            <p>Demonstration interface. Sample information is not an official university notification.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Calendar | KTU Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .calendar-container {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .calendar-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .calendar-heading h2 {
+            color: #102c50;
+            font-size: 22px;
+        }
+
+        .calendar-heading button {
+            background: #102c50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 14px;
+            cursor: pointer;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .calendar-day-name {
+            text-align: center;
+            font-weight: bold;
+            color: #102c50;
+            padding: 10px 0;
+        }
+
+        .calendar-day {
+            min-height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: #f2f5fa;
+            color: #26364a;
+        }
+
+        .calendar-day.empty {
+            background: transparent;
+        }
+
+        .calendar-day.today {
+            background: #102c50;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 0 3px #c9d9f5;
+        }
+
+        .calendar-note {
+            margin-top: 15px;
+            color: #687589;
+            font-size: 13px;
+        }
+
+        .calendar-events {
+            display: grid;
+            gap: 12px;
+        }
+
+        .event-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid #e5eaf1;
+        }
+
+        .event-card h3 {
+            margin: 0 0 6px;
+            color: #102c50;
+        }
+
+        .event-card p {
+            margin: 0;
+            color: #687589;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .calendar-container {
+                padding: 10px;
+            }
+
+            .calendar-grid {
+                gap: 4px;
+            }
+
+            .calendar-day {
+                min-height: 40px;
+                font-size: 13px;
+            }
+
+            .calendar-heading h2 {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2>KTU</h2>
+            <p>Student Portal</p>
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <nav>
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="announcements.html">📢 Announcements</a>
+            <a href="exam.html">📝 Examinations</a>
+            <a href="results.html">📊 Results</a>
+            <a href="exam.html#timetable">📅 Exam Timetable</a>
+            <a href="calendar.html" class="active">🗓️ Academic Calendar</a>
+        </nav>
+    </aside>
+
+    <button class="mobile-menu" onclick="toggleMenu()">☰ Menu</button>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>APJ Abdul Kalam Technological University</h2>
+                <p>Student Academic Portal</p>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <h1>Academic Calendar 📅</h1>
+            <p>View dates and plan your academic activities.</p>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2>Academic Calendar</h2>
+                <span class="badge">Calendar</span>
+            </div>
+
+            <div class="calendar-container">
+                <div class="calendar-heading">
+                    <button onclick="changeMonth(-1)">❮</button>
+                    <h2 id="monthYear"></h2>
+                    <button onclick="changeMonth(1)">❯</button>
+                </div>
+
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+
+            <p class="calendar-note">
+                Demonstration calendar. Dates and events are not official KTU announcements.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2>Sample Academic Events</h2>
+            </div>
+
+            <div class="calendar-events">
+                <div class="event-card">
+                    <span>📝</span>
+                    <div>
+                        <h3>Internal Assessment</h3>
+                        <p>Sample academic event</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <span>📚</span>
+                    <div>
+                        <h3>Assignment Submission</h3>
+                        <p>Sample academic deadline</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <span>🎓</span>
+                    <div>
+                        <h3>Semester Examination</h3>
+                        <p>Sample examination event</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>KTU Student Portal | REFORGE UI Redesign Project</p>
+            <p>Demonstration interface only.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+    <script>
+        let currentDate = new Date();
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            const monthNames = [
+                "January", "February", "March", "April",
+                "May", "June", "July", "August",
+                "September", "October", "November", "December"
+            ];
+
+            document.getElementById("monthYear").textContent =
+                monthNames[month] + " " + year;
+
+            const grid = document.getElementById("calendarGrid");
+            grid.innerHTML = "";
+
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+            days.forEach(function(day) {
+                const heading = document.createElement("div");
+                heading.className = "calendar-day-name";
+                heading.textContent = day;
+                grid.appendChild(heading);
+            });
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const totalDays = new Date(year, month + 1, 0).getDate();
+            const today = new Date();
+
+            for (let i = 0; i < firstDay; i++) {
+                const emptyCell = document.createElement("div");
+                emptyCell.className = "calendar-day empty";
+                grid.appendChild(emptyCell);
+            }
+
+            for (let day = 1; day <= totalDays; day++) {
+                const cell = document.createElement("div");
+                cell.className = "calendar-day";
+                cell.textContent = day;
+
+                if (
+                    day === today.getDate() &&
+                    month === today.getMonth() &&
+                    year === today.getFullYear()
+                ) {
+                    cell.classList.add("today");
+                }
+
+                grid.appendChild(cell);
+            }
+        }
+
+        function changeMonth(direction) {
+            currentDate.setDate(1);
+            currentDate.setMonth(currentDate.getMonth() + direction);
+            renderCalendar();
+        }
+
+        renderCalendar();
+    </script>
+
+</body>
+</html>
